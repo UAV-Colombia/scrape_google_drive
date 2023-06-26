@@ -14,7 +14,7 @@ def retrieve_links_from_folder(google_drive_folder_url):
 
 
 def save_links_to_csv(links, output_file):
-    with open(output_file, "w", newline="") as csv_file:
+    with open(output_file, "a", newline="") as csv_file:
         writer = csv.writer(csv_file)
         writer.writerows([[link] for link in links])
 
@@ -33,6 +33,9 @@ def extract_file_links_from_folders(input_file, output_file):
 def main():
     input_file = "folder_links.csv"  # Replace with the actual input CSV file
     output_file = "file_links.csv"
+
+    # Clear the contents of the output file before extracting new links
+    open(output_file, "w").close()
 
     extract_file_links_from_folders(input_file, output_file)
 
