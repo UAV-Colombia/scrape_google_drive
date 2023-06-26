@@ -18,7 +18,7 @@ def extract_links_from_html(html_content):
 
 
 def process_links(input_file, output_file):
-    extracted_links = []
+    extracted_links = set()  # Use a set to store unique links
     with open(input_file, "r") as csv_file:
         reader = csv.reader(csv_file)
         for row in tqdm(reader, desc="Processing links", unit=" links"):
@@ -28,7 +28,7 @@ def process_links(input_file, output_file):
                 html_content = response.text
                 link = extract_links_from_html(html_content)
                 if link:
-                    extracted_links.append(link)
+                    extracted_links.add(link)  # Add the link to the set
 
     with open(output_file, "w", newline="", encoding="utf-8") as csv_file:
         writer = csv.writer(csv_file)
