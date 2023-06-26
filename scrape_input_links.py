@@ -32,7 +32,7 @@ def extract_file_links_from_folders(input_file, output_file):
 
 def main():
     input_file = "folder_links.csv"  # Replace with the actual input CSV file
-    output_file = "links.csv"
+    output_file = "file_links.csv"
 
     extract_file_links_from_folders(input_file, output_file)
 
