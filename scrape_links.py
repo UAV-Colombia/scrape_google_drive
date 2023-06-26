@@ -36,7 +36,7 @@ def process_links(input_file, output_file):
 
 
 def main():
-    input_file = "drive_links.csv"
+    input_file = "links.csv"
     output_file = "extracted_links.csv"
     process_links(input_file, output_file)
 
