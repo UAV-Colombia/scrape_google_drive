@@ -22,7 +22,7 @@ def save_links_to_csv(links, output_file):
 def extract_file_links_from_folders(input_file, output_file):
     with open(input_file, "r") as csv_file:
         reader = csv.reader(csv_file)
-        next(reader)  # Skip header row
+        # next(reader)  # Skip header row
         for row in reader:
             folder_link = row[0]
             print(f"Extracting file links from folder: {folder_link}")
@@ -31,8 +31,8 @@ def extract_file_links_from_folders(input_file, output_file):
 
 
 def main():
-    input_file = "folder_links.csv"  # Replace with the actual input CSV file
-    output_file = "file_links.csv"
+    input_file = "arg_drive_links.csv"  # Replace with the actual input CSV file
+    output_file = "arg_file_links.csv"
 
     # Clear the contents of the output file before extracting new links
     open(output_file, "w").close()
